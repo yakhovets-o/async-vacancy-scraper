@@ -1,7 +1,6 @@
 import asyncio
 import csv
 import logging.config
-import time
 from typing import NoReturn
 
 import aiofiles
@@ -26,9 +25,6 @@ headers = {
     'Sec-Fetch-Site': 'cross-site',
 }
 
-# url = 'https://api.hh.ru/vacancies?area=16&per_page=100&text=Python&experience=between1And3&period=20'
-url = 'https://api.hh.ru/vacancies?text=python&area=16&per_page=100'
-
 
 async def get_vacancy(session: aiohttp.ClientSession, vacancy_url: str) -> None | NoReturn:
     try:
@@ -47,7 +43,7 @@ async def get_vacancy(session: aiohttp.ClientSession, vacancy_url: str) -> None 
         logger.error(ex, exc_info=True)
 
 
-async def gather_data() -> None | NoReturn:
+async def gather_data(url: str) -> None | NoReturn:
     try:
 
         async with aiohttp.ClientSession(headers=headers) as session:
@@ -117,17 +113,16 @@ async def create_csv() -> None:
         ])
 
 
-async def main():
+async def main() -> None:
     await create_csv()
-    await gather_data()
+    await gather_data(url='https://api.hh.ru/vacancies?text=python&area=16&per_page=100')
 
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.WARNING, format='%(asctime)s %(name)s %(levelname)s:%(message)s')
     logger = logging.getLogger(__name__)
-    start = time.time()
 
     asyncio.run(main())
 
-    finish = time.time()
-    print(f'Время работы: {finish - start} sec')
+
+
