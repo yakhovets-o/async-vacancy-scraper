@@ -53,9 +53,12 @@
 ---
 
 ## 🐳 Лицензия 
-Данный проект использует 
+Данный проект использует
 
 [![MIT](https://img.shields.io/badge/License-MIT-blue)](https://github.com/yakhovets-o/job-search-parser/blob/main/LICENSE)
+
+
+
 
 ---
 ## 🍀 Контакты 
