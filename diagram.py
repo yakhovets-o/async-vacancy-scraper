@@ -31,7 +31,7 @@ def create_diagram() -> None:
              in zip(df['key_skills'], df['count'])]
     ax.legend(handles=lines, loc='lower right', title='Skills')
 
-    ax.set_title('Top 15 Key Skills for Python Developer',
+    ax.set_title('Top 15 professional skills',
                  fontdict={'size': 20, 'fontname': 'Comic Sans MS', 'style': 'italic'})
 
     plt.savefig('skills_diagram.png', bbox_inches='tight')
