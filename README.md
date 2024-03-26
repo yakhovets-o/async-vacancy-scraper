@@ -53,7 +53,9 @@
 ---
 
 ## 🐳 Лицензия 
-Данный проект использует лицензию [***MIT***](https://github.com/yakhovets-o/job-search-parser/blob/main/LICENSE)
+Данный проект использует 
+
+[![MIT](https://img.shields.io/badge/License-MIT-blue)](https://github.com/yakhovets-o/job-search-parser/blob/main/LICENSE)
 
 ---
 ## 🍀 Контакты 
